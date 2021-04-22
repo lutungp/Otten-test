@@ -72,7 +72,7 @@ func main() {
 
 	d, err := ht.New(strings.NewReader(string(body)))
 
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/trackstatus", func(w http.ResponseWriter, r *http.Request) {
 		description, err := parseHistory(d)
 		if err == nil {
 			w.Write([]byte(description))
